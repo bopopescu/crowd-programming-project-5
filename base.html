@@ -13,6 +13,7 @@ var reward = 0;
 var count = 0;
 var playerLocation = 0;
 var lose = false;
+var time = 0;
 
 var game =
   [[0,0,0,1,0,0],
@@ -55,6 +56,14 @@ $(document).ready(function() {
   gameboard.css("width", boardWidth+"px");
   gameboard.css("height", boardHeight+"px");
   $(document.body).append(gameboard);
+
+  var score = $("<div id='score'></div>");
+  score.css("width", 200+"px");
+  score.css("height", 100+"px");
+  score.css("left", 1000+"px");
+  score.css("top", 500+"px");
+  score.text(reward);
+  $(document.body).append(score);
 
   for(var i = 0; i < boardVSize; i++){
     for(var j = 0; j < boardHSize; j++){
@@ -109,7 +118,9 @@ $(document).ready(function() {
     $(".player").css("left", piecex + "px");
   });
   var refresh = setInterval(function() {
+      $("#score").text("$ "+reward.toFixed(3));
       count ++;
+
 
       var nextRow = Math.floor(Math.random() * (game.length));
       // console.log("next Row" + nextRow);
@@ -123,7 +134,13 @@ $(document).ready(function() {
       }
       if((lose == false) && (count != 0) && ((count % 2) == 0)){
         reward = reward + 0.001;
+        time = count * 0.5;
       }
+
+      if (reward == 2){
+        alert("Game Over!");
+      }
+
       if (lose == true) {
         alert("Game Over!");
         clearInterval(refresh);
@@ -182,6 +199,10 @@ $(document).ready(function() {
   position: absolute;
   /*left: 0px;*/
   /*top: 0px;*/
+}
+
+.score{
+  position: fixed;
 }
 </style>
 </head>
