@@ -4,8 +4,8 @@ from boto.mturk.question import ExternalQuestion
 
 ######  CONFIGURATION PARAMETRS  ######
 
-SANDBOX = False  # Select whether to post to the sandbox (using fake money), or live MTurk site (using REAL money)
-HIT_URL = "https://peterweon.github.io/PeopleCounter/"  # Provide the URL that you want workers to sent sent to complete you task
+SANDBOX = True  # Select whether to post to the sandbox (using fake money), or live MTurk site (using REAL money)
+HIT_URL = "http://peterweon.github.io/crowd-programming-project-5/"  # Provide the URL that you want workers to sent sent to complete you task
 
 NUMBER_OF_HITS = 1  # Number of different HITs posted for this task
 NUMBER_OF_ASSIGNMENTS = 10  # Number of tasks that DIFFERENT workers will be able to take for each HIT
@@ -16,7 +16,7 @@ APPROVAL_DELAY = 60*60*10  # How long after the task is completed will the worke
 
 
 # HIT title (as it will appear on the public listing)
-TITLE = 'Fill in a title for the HIT posting'
+TITLE = 'Play the Rocket Ship game!'
 # Description of the HIT that workers will see when deciding to accept it or not
 DESCRIPTION = 'Fill in a more detailed explaination of the task that needs to be performed (1-3 sentences should be enough).'
 # Search terms for the HIT posting
@@ -24,9 +24,9 @@ KEYWORDS = ['example', 'test', 'Mechanical Turk']
 
 
 # Your Amazon Web Services Access Key (private)
-AWS_ACCESS_KEY = 'AKIAI3MTG55LBF54CRPQ' # <-- TODO: Enter your access key here
+AWS_ACCESS_KEY = 'AKIAJOP2XSU4XA3RFCLA' # <-- TODO: Enter your access key here
 # Your Amazon Web Services Secret Key (private)
-AWS_SECRET_KEY = 'EQc5AnDcEj/PNUHp3nJTegEx6v8XtCIXxRqfpHp/' # <-- TODO: Enter your private key here
+AWS_SECRET_KEY = '0LoSO24QAN27Bbp03Ud6dd4mvNdvtcDpYTSe0ay0' # <-- TODO: Enter your private key here
 
 #######################################
 
